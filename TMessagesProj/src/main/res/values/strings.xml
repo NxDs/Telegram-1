@@ -182,6 +182,8 @@
     <string name="SharedMedia">Shared Media</string>
     <string name="GroupInfo">Group Info</string>
     <string name="SHAREDMEDIA">SHARED MEDIA</string>
+    <string name="MESSAGESCOUNT">MESSAGES COUNT</string>
+    <string name="MessagesCount">Messages Count</string>
     <string name="SETTINGS">SETTINGS</string>
     <string name="AddMember">Add member</string>
     <string name="DeleteAndExit">Delete and leave group</string>

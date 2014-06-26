@@ -72,6 +72,8 @@ public class UserProfileActivity extends BaseFragment implements NotificationCen
     private int settingsNotificationsRow;
     private int sharedMediaSectionRow;
     private int sharedMediaRow;
+    private int messagesCountSection;
+    private int messagesCount;
     private int rowCount = 0;
 
     public UserProfileActivity(Bundle args) {
@@ -120,6 +122,8 @@ public class UserProfileActivity extends BaseFragment implements NotificationCen
         settingsNotificationsRow = rowCount++;
         sharedMediaSectionRow = rowCount++;
         sharedMediaRow = rowCount++;
+        messagesCountSection = rowCount++;
+        messagesCount = rowCount++;
     }
 
     @Override
@@ -310,6 +314,7 @@ public class UserProfileActivity extends BaseFragment implements NotificationCen
                 MessagesController.getInstance().getMediaCount(dialog_id, classGuid, true);
             } else {
                 MessagesController.getInstance().getMediaCount(user_id, classGuid, true);
+                MessagesController.getInstance().getM
             }
         } else {
             ViewGroup parent = (ViewGroup)fragmentView.getParent();
@@ -560,6 +565,8 @@ public class UserProfileActivity extends BaseFragment implements NotificationCen
                     textView.setText(LocaleController.getString("SETTINGS", R.string.SETTINGS));
                 } else if (i == sharedMediaSectionRow) {
                     textView.setText(LocaleController.getString("SHAREDMEDIA", R.string.SHAREDMEDIA));
+                } else if (i == messagesCountSection){
+                    textView.setText(LocaleController.getString("MESSAGESCOUNT", R.string.MESSAGESCOUNT));
                 }
             } else if (type == 2) {
                 final TLRPC.User user = MessagesController.getInstance().users.get(user_id);
@@ -700,7 +707,7 @@ public class UserProfileActivity extends BaseFragment implements NotificationCen
         public int getItemViewType(int i) {
             if (i == avatarRow) {
                 return 0;
-            } else if (i == phoneSectionRow || i == settingsSectionRow || i == sharedMediaSectionRow) {
+            } else if (i == phoneSectionRow || i == settingsSectionRow || i == sharedMediaSectionRow || i == messagesCountSection) {
                 return 1;
             } else if (i == phoneRow) {
                 return 2;
